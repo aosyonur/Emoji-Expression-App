@@ -1,60 +1,177 @@
-html {
-    height: 100vh;
-    font-family: Baloo;
+/* html {
+  font-family: Baloo;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 body {
-    padding: 10px;
-    background-image: linear-gradient(#5DA4D9, #FFF);
+  padding: 10px;
+  margin: 0;
+  height: 100%;
+  background-image: linear-gradient(#5da4d9, #fff);
+  min-height: 100vh;
+}
+
+@media all and (max-width:600px){
+    body {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.container {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 5rem;
+  margin: auto;
+  padding: 20px 0 20px 0;
+  max-width: 600px;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
 }
 
 #emoji-container {
-    margin: 40px;
-    text-align: center;
+  margin: 40px;
+  text-align: center;
 }
 
 #emoji-container span {
-    margin: 10px;
-    font-size: 60px;
+  margin: 10px;
+  font-size: 60px;
+  display: inline-block;
 }
 
-#push-btn, #unshift-btn {
-    background-color: #80D87F;
+#emoji-container h2 {
+  margin: 0;
 }
 
-#shift-btn,#pop-btn {
-    background-color: #E23349;
+#push-btn,
+#unshift-btn {
+  background-color: #80d87f;
+}
+
+#shift-btn,
+#pop-btn {
+  background-color: #e23349;
 }
 
 h1 {
-    letter-spacing: 2px;
-    text-align: center;
-    color: white;
+  margin: 0;
+  letter-spacing: 2px;
+  text-align: center;
+  color: white;
 }
 
 input {
-    margin: 0 auto;
-    display: block;
-    border: none;
-    height: 30px;
-    background: white;
-    border-radius: 6px;
-    text-align: center;
-}
-
-button {
-    font-family: Baloo;
-    background: darkcyan;
-    color: white;
-    border: none;
-    padding: 4px 10px;
-    border-radius: 6px;
-    margin: 0 4px;
+  margin: 0 auto;
+  display: block;
+  border: none;
+  height: 30px;
+  background: white;
+  border-radius: 6px;
+  text-align: center;
+  width: 200px;
+  padding: 10px;
+  font-size: 20px;
 }
 
 .buttons-wrapper {
-    display: flex;
-    justify-content: center;
-    margin: 10px 0 0;
+  display: flex;
+  justify-content: center;
+  margin: 10px auto;
+  max-width: 400px;
+  flex-wrap: wrap;
 }
 
+button {
+  font-family: Baloo;
+  background: darkcyan;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  margin: 4px;
+  flex: 1 1 0;
+  max-width: 200px;
+  min-width: 140px;
+} */
+
+body {
+  font-family: "Karla", sans-serif;
+  padding: 0;
+  margin: 0;
+  background-color: rgb(118, 106, 93);
+  min-height: 100vh;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 80%;
+  max-width: 600px;
+  margin: 10px auto;
+  background-color: rgba(40, 36, 32, 0.3);
+  padding: 50px;
+  border-radius: 10px;
+  box-shadow: 0 10px 50px 2px rgba(0, 0, 0, 0.2),
+    0 25px 50px 0 rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 50px;
+  color: rgb(108, 42, 6);
+}
+
+input {
+  font-family: "Karla", sans-serif;
+  background-color: antiquewhite;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  font-size: 16px;
+  padding: 10px;
+}
+
+button {
+  font-family: "Karla", sans-serif;
+  padding: 10px;
+  background-color: antiquewhite;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  margin: 4px;
+  max-width: 200px;
+  min-width: 140px;
+  flex: 1;
+  
+}
+
+.buttons-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 10px auto;
+  max-width: 400px;
+  flex-wrap: wrap;
+}
+
+#emoji-container {
+  font-size: 50px;
+  border: 6px dotted brown;
+  padding: 10px;
+}
+
+#emoji-container h2,
+p {
+  font-size: 20px;
+  letter-spacing: normal;
+}

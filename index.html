@@ -5,23 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Emoji App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Baloo&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Karla:wght@400;800&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>My Emojis</h1>
-    <div id="emoji-container"></div>
-    <input type="text" id="emoji-input" placeholder="type an emoji 🎉" />
-    <div class="buttons-wrapper">
-      <button id="push-btn">Add to end</button>
-      <button id="unshift-btn">Add to beginning</button>
-    </div>
-    <div class="buttons-wrapper">
-      <button id="pop-btn">Remove from end</button>
-      <button id="shift-btn">Remove from beginning</button>
+    <div class="container">
+      <h1>Onur's Emojis</h1>
+      <div id="emoji-container">
+        <h2>How to choose an emoji:</h2>
+        <p>
+          On Mac press Cmd + Ctrl + Spacebar<br />
+          On Windows press Windows logo key + . (period)
+        </p>
+      </div>
+      <input type="text" id="emoji-input" placeholder="type an emoji 🎉" />
+      <div class="buttons-wrapper" id="buttons-wrapper">
+        //====> Buttons Here === //
+      </div>
     </div>
   </body>
   <script src="script.js"></script>

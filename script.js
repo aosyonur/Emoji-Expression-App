@@ -1,45 +1,75 @@
-const myEmojis = ["👨‍💻", "⛷", "🍲"]
-const emojiContainer = document.getElementById("emoji-container")
-const emojiInput = document.getElementById("emoji-input")
-const pushBtn = document.getElementById("push-btn")
-const unshiftBtn = document.getElementById("unshift-btn")
-const popBtn = document.getElementById("pop-btn")
-const shiftBtn = document.getElementById("shift-btn")
 
-function renderEmojis() {
-    emojiContainer.innerHTML = ""
-    for (let i = 0; i < myEmojis.length; i++) {
-        const emoji = document.createElement('span')
-        emoji.textContent = myEmojis[i]
-        emojiContainer.append(emoji)
-    }
+
+const myEmojis = [];
+const emojiContainer = document.getElementById("emoji-container");
+const emojiInput = document.getElementById("emoji-input");
+const buttonWrapper1 = document.getElementById("buttons-wrapper")
+
+
+renderBtns();
+
+function renderBtns() {
+  //Only show the "Add Emoji!" button if emoji array is empty
+  if (myEmojis.length < 1) {
+    buttonWrapper1.innerHTML = `<button id="add-btn">Add Emoji!</button>`;
+    const addBtn = document.getElementById("add-btn");
+    addBtn.addEventListener("click", function () {
+      updateEmojis("push");
+    });
+  } else {
+    buttonWrapper1.innerHTML = `
+        <button id="push-btn">+</button>
+        <button id="unshift-btn">+</button>
+        <button id="pop-btn">-</button>
+        <button id="shift-btn">-</button>`;
+  }
 }
 
-renderEmojis()
+function renderEmojis() {
+  emojiContainer.innerHTML = "";
+  for (let i = 0; i < myEmojis.length; i++) {
+    emojiContainer.innerHTML += `<span>${myEmojis[i]}</span>`;
+  }
+}
 
-pushBtn.addEventListener("click", function(){
-    if (emojiInput.value) {
-        myEmojis.push(emojiInput.value)
-        emojiInput.value = ""
-        renderEmojis()
+function updateEmojis(action) {
+  if (emojiInput.value) {
+    if (action === "push") {
+      myEmojis.push(emojiInput.value);
+    } else if (action === "unshift") {
+      myEmojis.unshift(emojiInput.value);
+      renderEmojis();
     }
-})
+    emojiInput.value = "";
+    renderEmojis();
+    renderBtns();
+    checkBtns();
+  }
+}
 
-unshiftBtn.addEventListener("click", function(){
-    if (emojiInput.value) {
-        myEmojis.unshift(emojiInput.value)
-        emojiInput.value = ""
-        renderEmojis()
-    }
-})
+function checkBtns() {
+  if (myEmojis.length > 0) {
+    const pushBtn = document.getElementById("push-btn");
+    const unshiftBtn = document.getElementById("unshift-btn");
+    const popBtn = document.getElementById("pop-btn");
+    const shiftBtn = document.getElementById("shift-btn");
 
-popBtn.addEventListener("click", function() {
-    myEmojis.pop()
-    renderEmojis()
-})
+    pushBtn.addEventListener("click", function () {
+      updateEmojis("push");
+    });
 
-shiftBtn.addEventListener("click", function() {
-    myEmojis.shift()
-    renderEmojis()
-})
+    unshiftBtn.addEventListener("click", function () {
+      updateEmojis("unshift");
+    });
 
+    popBtn.addEventListener("click", function () {
+      myEmojis.pop();
+      renderEmojis();
+    });
+
+    shiftBtn.addEventListener("click", function () {
+      myEmojis.shift();
+      renderEmojis();
+    });
+  }
+}
