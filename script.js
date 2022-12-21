@@ -1,10 +1,7 @@
-
-
 const myEmojis = [];
 const emojiContainer = document.getElementById("emoji-container");
 const emojiInput = document.getElementById("emoji-input");
-const buttonWrapper1 = document.getElementById("buttons-wrapper")
-
+const buttonWrapper1 = document.getElementById("buttons-wrapper");
 
 renderBtns();
 
@@ -18,10 +15,10 @@ function renderBtns() {
     });
   } else {
     buttonWrapper1.innerHTML = `
-        <button id="push-btn">+</button>
         <button id="unshift-btn">+</button>
-        <button id="pop-btn">-</button>
-        <button id="shift-btn">-</button>`;
+        <button id="push-btn">+</button>
+        <button id="shift-btn">-</button>
+        <button id="pop-btn">-</button>`;
   }
 }
 
