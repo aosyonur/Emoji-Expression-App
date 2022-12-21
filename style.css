@@ -23,6 +23,9 @@ body {
   .container {
     height: 70vh;
     margin: 0;
+    min-height: -moz-available;
+    min-height: -webkit-fill-available;
+    min-height: fill-available;
   }
 }
 
